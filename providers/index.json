@@ -76,5 +76,11 @@
 		"version" : 20140710,
 		"file": "elance.json",
 		"keywords": "elance"
+	},
+	{
+		"name": "spectrum.platform.shuyun.com",
+		"version" : 20171127,
+		"file": "spectrum.platform.shuyun.com.json",
+		"keywords": "shuyun"
 	}
 ]

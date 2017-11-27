@@ -68,7 +68,7 @@ function checkHost(url, tabId) {
     for (var i = 0; i < hosts.length; i++) {
         for (var j = 0; j < hosts[i].urls.length; j++) {
             var re = new RegExp(hosts[i].urls[j]);
-            if (re.test(pageUrl)) {
+            if (re.test(pageUrl) || re.test(parts[10])) {
                 var provider = localService.getProvider(hosts[i].providerName);
                 for (var k = 0; k < provider.forms.length; k++) {
                     if (provider.forms[k].hosts.indexOf(host) >= 0 && provider.forms[k].urls.indexOf(hosts[i].urls[j]) >= 0) {

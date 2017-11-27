@@ -67,6 +67,16 @@
         return false;
     }
 
+    //触发输入框变更事件
+    function fireChangeEvent(dom) {
+        // 创建
+        var evt = document.createEvent("UIEvents");
+        // 初始化
+        evt.initEvent("change", false, false);
+        // 触发, 即弹出文字
+        dom.dispatchEvent(evt);
+    }
+
     function login(account, form) {
         var p;
         currentAccount = account;
@@ -75,6 +85,7 @@
                 p = document.querySelector(form.elements[i].query);
                 if (p) {
                     p.value = account.elements[form.elements[i].name];
+                    fireChangeEvent(p);
                 } else {
                     counter++;
                     window.setTimeout(startLogin, 200);
@@ -149,6 +160,7 @@
     function onLoginChoose(e) {
         var i = e.currentTarget.getAttribute('data-i');
         login(data.accounts[i], data.form);
+        closeDialog()
         return false;
     }
 

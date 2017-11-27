@@ -1,0 +1,33 @@
+{
+    "name": "spectrum.platform.shuyun.com",
+    "version": 20171127,
+    "elements": [
+        {
+            "name": "login",
+            "type": "text",
+            "description": "用户名"
+        },
+        {
+            "name": "password",
+            "type": "password",
+            "description": "密码"
+        }
+    ],
+    "forms": [
+        {
+            "hosts": ["spectrum.platform.shuyun.com"],
+            "urls": [".*home"],
+            "elements": [
+                {
+                    "name": "login",
+                    "query": "#inputUserName"
+                },
+                {
+                    "name": "password",
+                    "query": "#inputPassword"
+                }
+            ],
+            "submit": "form button[type=submit]"
+        }
+    ]
+}
